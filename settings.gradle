@@ -1,0 +1,2 @@
+rootProject.name = "Custom_AnimationUI"
+include ':app'
