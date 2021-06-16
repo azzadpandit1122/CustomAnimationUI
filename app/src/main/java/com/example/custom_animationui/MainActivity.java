@@ -28,13 +28,13 @@ public class MainActivity extends AppCompatActivity {
         button4 = findViewById(R.id.button4);
         button5 = findViewById(R.id.button5);
         button6 = findViewById(R.id.button6);
+        // fregment init
         FragmentManager fragmentManager = getSupportFragmentManager();
-
         FragmentTransaction transaction = fragmentManager.beginTransaction();
         button6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                transaction.setCustomAnimations(R.anim.rotate, R.anim.righttoleft);
+                transaction.setCustomAnimations(R.anim.righttoleft, R.anim.righttoleft);
                 transaction.replace(R.id.main, new Dashbord_Fragment());
                 transaction.addToBackStack(null);
                 transaction.commit();
