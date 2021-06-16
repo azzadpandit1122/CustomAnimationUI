@@ -1,6 +1,8 @@
 package com.example.custom_animationui;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.view.View;
@@ -12,7 +14,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button button, button1, button2, button4, button5;
+    Button button, button1, button2, button4, button5, button6;
     TextView textView;
 
     @Override
@@ -25,11 +27,26 @@ public class MainActivity extends AppCompatActivity {
         button2 = findViewById(R.id.button3);
         button4 = findViewById(R.id.button4);
         button5 = findViewById(R.id.button5);
+        button6 = findViewById(R.id.button6);
+        FragmentManager fragmentManager = getSupportFragmentManager();
 
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        button6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                transaction.setCustomAnimations(R.anim.rotate, R.anim.righttoleft);
+                transaction.replace(R.id.main, new Dashbord_Fragment());
+                transaction.addToBackStack(null);
+                transaction.commit();
+            }
+        });
         button5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getSupportFragmentManager().beginTransaction().replace(R.id.main, new Dashbord_Fragment()).commit();
+                transaction.setCustomAnimations(R.anim.zoomin, R.anim.zoomout);
+                transaction.replace(R.id.main, new Dashbord_Fragment());
+                transaction.addToBackStack(null);
+                transaction.commit();
             }
         });
         button4.setOnClickListener(new View.OnClickListener() {
