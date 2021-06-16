@@ -29,12 +29,14 @@ public class MainActivity extends AppCompatActivity {
         button5 = findViewById(R.id.button5);
         button6 = findViewById(R.id.button6);
         // fregment init
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction transaction = fragmentManager.beginTransaction();
+
         button6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                transaction.setCustomAnimations(R.anim.righttoleft, R.anim.righttoleft);
+                //
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                FragmentTransaction transaction = fragmentManager.beginTransaction();
+                transaction.setCustomAnimations(R.anim.righttoleft, R.anim.lefttoright);
                 transaction.replace(R.id.main, new Dashbord_Fragment());
                 transaction.addToBackStack(null);
                 transaction.commit();
@@ -43,8 +45,10 @@ public class MainActivity extends AppCompatActivity {
         button5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                transaction.setCustomAnimations(R.anim.zoomin, R.anim.zoomout);
-                transaction.replace(R.id.main, new Dashbord_Fragment());
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                FragmentTransaction transaction = fragmentManager.beginTransaction();
+                transaction.setCustomAnimations(R.anim.blink_anim, R.anim.lefttoright);
+                transaction.replace(R.id.main, new Left_to_Right_Fragment());
                 transaction.addToBackStack(null);
                 transaction.commit();
             }
@@ -52,31 +56,52 @@ public class MainActivity extends AppCompatActivity {
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Animation animation3 = AnimationUtils.loadAnimation(MainActivity.this, R.anim.righttoleft);
-                textView.startAnimation(animation3);
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                FragmentTransaction transaction = fragmentManager.beginTransaction();
+                transaction.setCustomAnimations(R.anim.fadeout, R.anim.fadein);
+                transaction.replace(R.id.main, new Fade_out_Fragment());
+                transaction.addToBackStack(null);
+                transaction.commit();
             }
         });
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Animation animatio1 = AnimationUtils.loadAnimation(MainActivity.this, R.anim.fadeout);
-                textView.startAnimation(animatio1);
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                FragmentTransaction transaction = fragmentManager.beginTransaction();
+                transaction.setCustomAnimations(R.anim.sample_anim, R.anim.fadeout);
+                transaction.replace(R.id.main, new FADEIN_Fragment());
+                transaction.addToBackStack(null);
+                transaction.commit();
+//
+//                fragment = new lunes_gestionar();
+//
+//                FragmentTransaction ft =  getSupportFragmentManager().beginTransaction();
+//                ft.replace(R.id.fragment,fragment)
+//                        .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).commit();
             }
         });
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Animation animation = AnimationUtils.loadAnimation(MainActivity.this, R.anim.blink_anim);
-                textView.startAnimation(animation);
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                FragmentTransaction transaction = fragmentManager.beginTransaction();
+                transaction.setCustomAnimations(R.anim.bounce, R.anim.blink_anim);
+                transaction.replace(R.id.main, new baunse_Fragment());
+                transaction.addToBackStack(null);
+                transaction.commit();
             }
         });
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Animation no1
-                Animation animation = AnimationUtils.loadAnimation(MainActivity.this, R.anim.bounce);
-                Toast.makeText(MainActivity.this, "Bouns Animation", Toast.LENGTH_SHORT).show();
-                textView.startAnimation(animation);
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                FragmentTransaction transaction = fragmentManager.beginTransaction();
+                transaction.setCustomAnimations(R.anim.righttoleft, R.anim.righttoleft);
+                transaction.replace(R.id.main, new Dashbord_Fragment());
+                transaction.addToBackStack(null);
+                transaction.commit();
 
             }
         });

@@ -10,11 +10,12 @@
 
     <!-- TODO: Update blank fragment layout -->
     <ImageView
-        android:layout_width="100dp"
-        android:layout_height="300dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:scaleType="fitXY"
-        android:src="@drawable/ic_baseline_directions_walk_24" />
+        android:src="@drawable/dog"
+        />
 
     <Button
         android:id="@+id/back"
