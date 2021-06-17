@@ -1,29 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="400dp"
-    android:layout_gravity="center"
-    android:layout_margin="30dp"
-    android:background="@color/purple_200"
-    tools:context=".Dashbord_Fragment">
+    android:layout_height="match_parent"
+    android:background="@color/teal_200"
+    android:orientation="vertical"
+    tools:context=".dashbord_Fragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:scaleType="fitXY"
-        android:src="@drawable/dog"
-        />
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/loader" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/home_charge" />
 
     <Button
-        android:id="@+id/back"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_gravity="bottom|center_horizontal"
-        android:hint="back"
-        android:textColorHint="@color/white"
-        android:textSize="20dp" />
-
-</FrameLayout>
+        android:id="@+id/next"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="next"
+        android:textColor="@color/black"
+        android:textSize="30dp"
+        app:cornerRadius="20dp" />
+</LinearLayout>
